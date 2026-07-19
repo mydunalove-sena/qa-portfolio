@@ -78,7 +78,7 @@ img{max-width:100%;display:block}
 .project-head .tags{display:flex;flex-wrap:wrap;gap:8px;flex:1;align-content:flex-start}
 .project-card img{width:158px;max-width:100%;flex:0 0 158px;border-radius:12px;border:1px solid var(--line);background:#f8fafc;align-self:flex-start}
 .tags{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}.tag{font-size:12px;padding:4px 9px;border-radius:999px;background:#eef4ff;color:#2563eb;font-weight:800}
-.contact-card{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:28px 24px;align-items:center}
+.contact-card{display:grid;grid-template-columns:repeat(2,1fr);gap:0;padding:28px 24px;align-items:center}
 .contact-item{display:grid;grid-template-columns:58px 1fr;gap:14px;align-items:center;padding:0 20px;border-right:1px solid var(--line);min-height:90px}.contact-item:last-child{border-right:0}
 .contact-icon{width:54px;height:54px;border-radius:50%;background:#f1f6ff;display:grid;place-items:center;color:var(--navy)}.contact-icon svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:1.8}
 .contact-item strong{display:block;color:var(--navy)}.contact-item span,.contact-item a{color:#4b5563;font-size:14px}
