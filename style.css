@@ -93,3 +93,14 @@ img{max-width:100%;display:block}
 
 @media(max-width:980px){.career-card{padding:0 24px}}
 @media(max-width:720px){.job ul{padding-left:18px}.container{width:min(100% - 28px,1180px)}.nav-wrap{height:auto;min-height:76px;align-items:flex-start;flex-direction:column;padding:16px 0}.menu{width:100%;overflow-x:auto;gap:22px;font-size:14px}.menu a{padding:8px 0 14px}.menu a.active::after,.menu a:hover::after{bottom:6px}.hero{padding:54px 0}.hero h1{font-size:54px}.hero .role{font-size:34px}.hero p{font-size:16px}.about-card{grid-template-columns:1fr;padding:28px}.skills-grid{grid-template-columns:1fr}.career-wrap{grid-template-columns:1fr}.timeline{display:none}.job{grid-template-columns:1fr}.contact-card{grid-template-columns:1fr}.contact-item{border-right:0!important;border-bottom:1px solid var(--line)!important}.contact-item:last-child{border-bottom:0!important}.detail-grid{grid-template-columns:1fr}.project-card{grid-template-columns:1fr}.project-head{flex-direction:column;gap:12px}.project-card img{width:100%;max-width:220px}}
+
+/* Mobile: prevent career headings from causing page-wide horizontal overflow */
+@media(max-width:720px){
+  .job h3{
+    white-space:normal;
+    overflow-wrap:anywhere;
+  }
+  .job-left>div{
+    min-width:0;
+  }
+}
