@@ -1,0 +1,308 @@
+[
+  {
+    "name": "desktop_index",
+    "width": 1440,
+    "height": 1100,
+    "metrics": {
+      "url": "http://127.0.0.1:8000/index.html",
+      "title": "박정은 | QA Engineer Portfolio",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyTextHasMojibake": false,
+      "images": [
+        {
+          "src": "images/hero-qa-dashboard.png",
+          "complete": true,
+          "naturalWidth": 950,
+          "naturalHeight": 1025,
+          "alt": "QA 검증 대시보드 일러스트"
+        },
+        {
+          "src": "images/project-ai.svg",
+          "complete": true,
+          "naturalWidth": 300,
+          "naturalHeight": 150,
+          "alt": "AI 카메라 성능 평가 미리보기"
+        },
+        {
+          "src": "images/project-compat.svg",
+          "complete": true,
+          "naturalWidth": 300,
+          "naturalHeight": 150,
+          "alt": "NVR-CAM 호환성 검증 미리보기"
+        },
+        {
+          "src": "images/project-issue.svg",
+          "complete": true,
+          "naturalWidth": 300,
+          "naturalHeight": 150,
+          "alt": "결함 재현 및 이슈 공유 미리보기"
+        },
+        {
+          "src": "images/my-health-log/01_home_dashboard.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "My Health Log 홈 대시보드 미리보기"
+        }
+      ],
+      "headings": [
+        "박정은",
+        "About",
+        "Skills",
+        "검증 항목 수행",
+        "기능 검증",
+        "회귀 테스트",
+        "결함 재현",
+        "테스트 환경 관리",
+        "문서화 및 공유",
+        "Career",
+        "Hanwha Vision | QA / SQA / SQE",
+        "유앤아이컴퓨넷(주) | 경영지원실",
+        "Projects",
+        "AI 카메라 성능 평가",
+        "NVR-CAM 호환성 검증",
+        "결함 재현 및 이슈 공유",
+        "My Health Log",
+        "Contact"
+      ]
+    },
+    "consoleMessages": [],
+    "failed": [],
+    "responses404": []
+  },
+  {
+    "name": "desktop_case",
+    "width": 1440,
+    "height": 1200,
+    "metrics": {
+      "url": "http://127.0.0.1:8000/my-health-log.html",
+      "title": "My Health Log | QA Case Study",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyTextHasMojibake": false,
+      "images": [
+        {
+          "src": "images/my-health-log/01_home_dashboard.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "My Health Log 홈 대시보드"
+        },
+        {
+          "src": "images/my-health-log/02_health_list.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "Health 기록 목록"
+        },
+        {
+          "src": "images/my-health-log/03_health_add_edit.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "Health 수정 화면"
+        },
+        {
+          "src": "images/my-health-log/04_medication_today.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "Medication 오늘의 복약 화면"
+        },
+        {
+          "src": "images/my-health-log/06_lab_result_list.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "Lab 검사 결과 목록"
+        },
+        {
+          "src": "images/my-health-log/09_statistics_blood_pressure.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "혈압 통계 화면"
+        },
+        {
+          "src": "images/my-health-log/10_statistics_lab.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "검사 통계 화면"
+        }
+      ],
+      "headings": [
+        "My Health Log",
+        "Project Overview",
+        "Problem",
+        "App Structure",
+        "Main Features",
+        "Data Model",
+        "QA Strategy",
+        "Test Case Samples",
+        "DB Migration / Data Integrity",
+        "Visual QA & BUG-001",
+        "Regression / Release",
+        "Screenshots",
+        "What I Learned"
+      ]
+    },
+    "consoleMessages": [],
+    "failed": [],
+    "responses404": []
+  },
+  {
+    "name": "mobile_index",
+    "width": 390,
+    "height": 900,
+    "metrics": {
+      "url": "http://127.0.0.1:8000/index.html",
+      "title": "박정은 | QA Engineer Portfolio",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "bodyTextHasMojibake": false,
+      "images": [
+        {
+          "src": "images/hero-qa-dashboard.png",
+          "complete": true,
+          "naturalWidth": 950,
+          "naturalHeight": 1025,
+          "alt": "QA 검증 대시보드 일러스트"
+        },
+        {
+          "src": "images/project-ai.svg",
+          "complete": true,
+          "naturalWidth": 300,
+          "naturalHeight": 150,
+          "alt": "AI 카메라 성능 평가 미리보기"
+        },
+        {
+          "src": "images/project-compat.svg",
+          "complete": true,
+          "naturalWidth": 300,
+          "naturalHeight": 150,
+          "alt": "NVR-CAM 호환성 검증 미리보기"
+        },
+        {
+          "src": "images/project-issue.svg",
+          "complete": true,
+          "naturalWidth": 300,
+          "naturalHeight": 150,
+          "alt": "결함 재현 및 이슈 공유 미리보기"
+        },
+        {
+          "src": "images/my-health-log/01_home_dashboard.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "My Health Log 홈 대시보드 미리보기"
+        }
+      ],
+      "headings": [
+        "박정은",
+        "About",
+        "Skills",
+        "검증 항목 수행",
+        "기능 검증",
+        "회귀 테스트",
+        "결함 재현",
+        "테스트 환경 관리",
+        "문서화 및 공유",
+        "Career",
+        "Hanwha Vision | QA / SQA / SQE",
+        "유앤아이컴퓨넷(주) | 경영지원실",
+        "Projects",
+        "AI 카메라 성능 평가",
+        "NVR-CAM 호환성 검증",
+        "결함 재현 및 이슈 공유",
+        "My Health Log",
+        "Contact"
+      ]
+    },
+    "consoleMessages": [],
+    "failed": [],
+    "responses404": []
+  },
+  {
+    "name": "mobile_case",
+    "width": 390,
+    "height": 900,
+    "metrics": {
+      "url": "http://127.0.0.1:8000/my-health-log.html",
+      "title": "My Health Log | QA Case Study",
+      "scrollWidth": 636,
+      "clientWidth": 390,
+      "bodyTextHasMojibake": false,
+      "images": [
+        {
+          "src": "images/my-health-log/01_home_dashboard.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "My Health Log 홈 대시보드"
+        },
+        {
+          "src": "images/my-health-log/02_health_list.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "Health 기록 목록"
+        },
+        {
+          "src": "images/my-health-log/03_health_add_edit.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "Health 수정 화면"
+        },
+        {
+          "src": "images/my-health-log/04_medication_today.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "Medication 오늘의 복약 화면"
+        },
+        {
+          "src": "images/my-health-log/06_lab_result_list.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "Lab 검사 결과 목록"
+        },
+        {
+          "src": "images/my-health-log/09_statistics_blood_pressure.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "혈압 통계 화면"
+        },
+        {
+          "src": "images/my-health-log/10_statistics_lab.png",
+          "complete": true,
+          "naturalWidth": 1080,
+          "naturalHeight": 2400,
+          "alt": "검사 통계 화면"
+        }
+      ],
+      "headings": [
+        "My Health Log",
+        "Project Overview",
+        "Problem",
+        "App Structure",
+        "Main Features",
+        "Data Model",
+        "QA Strategy",
+        "Test Case Samples",
+        "DB Migration / Data Integrity",
+        "Visual QA & BUG-001",
+        "Regression / Release",
+        "Screenshots",
+        "What I Learned"
+      ]
+    },
+    "consoleMessages": [],
+    "failed": [],
+    "responses404": []
+  }
+]

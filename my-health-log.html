@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Health Log | QA Case Study</title>
+  <link rel="icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html"><span class="brand-mark"></span><span>박정은<small>QA Engineer</small></span></a>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="career.html">Career</a>
+      <a class="active" href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="page-hero case-hero" id="case-hero">
+    <div class="container case-hero-grid">
+      <div>
+        <p class="eyebrow">QA Case Study · V1.0.1</p>
+        <h1>My Health Log</h1>
+        <p>Flutter 기반 개인 건강 기록 앱을 직접 기획하고 구현한 뒤, 요구사항 기반 QA부터 Regression, Android Release까지 검증한 개인 QA 프로젝트입니다.</p>
+        <a class="project-link hero-link" href="projects.html">Projects로 돌아가기</a>
+      </div>
+      <div class="case-hero-shot">
+        <img src="images/my-health-log/01_home_dashboard.png" alt="My Health Log 홈 대시보드">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-grid">
+      <article class="card detail-card">
+        <h2>Project Overview</h2>
+        <div class="info-grid">
+          <div><strong>Project Type</strong><span>Personal QA Project</span></div>
+          <div><strong>Platform</strong><span>Android / Flutter</span></div>
+          <div><strong>Data</strong><span>SQLite Local DB v3</span></div>
+          <div><strong>Version</strong><span>1.0.1+2</span></div>
+          <div class="wide"><strong>Scope</strong><span>Planning / Implementation / QA / Regression / Release</span></div>
+        </div>
+      </article>
+      <article class="card detail-card">
+        <h2>Problem</h2>
+        <p>체중, 혈압, 수분, 운동, 수면, 컨디션, 복약, 검사 결과를 날짜 기준으로 기록하고 비교하기 어렵다는 문제를 V1 범위로 정의했습니다.</p>
+      </article>
+
+      <article class="card detail-card full" id="features">
+        <h2>App Structure</h2>
+        <div class="feature-grid">
+          <div><strong>Home</strong><span>오늘 건강 요약, 오늘 복약 상태</span></div>
+          <div><strong>Health</strong><span>체중, 혈압, 수분, 운동, 수면, 컨디션 CRUD</span></div>
+          <div><strong>Medication</strong><span>약 등록/수정, 복용 시간, Soft Delete, 복약 Toggle</span></div>
+          <div><strong>Lab</strong><span>검사 결과 CRUD, 날짜별 Group / Detail</span></div>
+          <div><strong>Statistics</strong><span>체중, 혈압, 검사 수치 변화와 실제 기록값</span></div>
+        </div>
+      </article>
+
+      <article class="card detail-card full">
+        <h2>Main Features</h2>
+        <ul class="case-list">
+          <li>HealthRecord는 날짜별 1개 Record 정책과 Local Persistence를 검증했습니다.</li>
+          <li>Medication 삭제 후 과거 MedicationLog 보존을 위해 Soft Delete로 처리했습니다.</li>
+          <li>MedicationLog는 날짜와 timeSlot 기준으로 복용 완료와 취소 상태를 분리했습니다.</li>
+          <li>LabResult는 날짜별 그룹과 상세 화면, 동일 date + testName 중복 방지를 검증했습니다.</li>
+          <li>Statistics는 별도 통계 테이블 없이 저장된 HealthRecord / LabResult를 조회해 표시했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="card detail-card full" id="data-model">
+        <h2>Data Model</h2>
+        <div class="entity-grid">
+          <div><strong>HealthRecord</strong><span>날짜별 건강 수치와 상태 기록</span></div>
+          <div><strong>Medication</strong><span>복용약, 복용 시간, 활성 상태</span></div>
+          <div><strong>MedicationLog</strong><span>Medication 1:N 관계의 날짜별 복용 여부</span></div>
+          <div><strong>LabResult</strong><span>검사 날짜, 항목, 결과값, 단위</span></div>
+        </div>
+        <p class="note">QA 관점에서는 어떤 데이터가 어떤 화면과 상태에 영향을 주는지 기준을 세우고 CRUD와 데이터 일관성을 검증하는 데 초점을 맞췄습니다.</p>
+      </article>
+
+      <article class="card detail-card full" id="qa-strategy">
+        <h2>QA Strategy</h2>
+        <div class="metric-grid">
+          <div><strong>TC</strong><span>62</span></div>
+          <div><strong>PASS</strong><span>62</span></div>
+          <div><strong>Automated Test</strong><span>64 PASS</span></div>
+          <div><strong>Regression</strong><span>62 PASS</span></div>
+          <div><strong>V1.0.1</strong><span>Patch Release PASS</span></div>
+        </div>
+        <ul class="case-list">
+          <li>Requirement-based Testing</li>
+          <li>CRUD / Validation / Empty State</li>
+          <li>Persistence / DB Migration / Cross Feature</li>
+          <li>Regression / Release APK Smoke Test</li>
+        </ul>
+      </article>
+
+      <article class="card detail-card full" id="test-cases">
+        <h2>Test Case Samples</h2>
+        <div class="table-wrap">
+          <table class="case-table">
+            <thead><tr><th>TC ID</th><th>Area</th><th>Scenario</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>TC-HLTH-007</td><td>Health</td><td>동일 날짜 HealthRecord 중복 방지</td><td>PASS</td></tr>
+              <tr><td>TC-MED-006</td><td>Medication</td><td>Soft Delete 후 현재 목록 미노출</td><td>PASS</td></tr>
+              <tr><td>TC-MLOG-004</td><td>MedicationLog</td><td>동일 medicationId/date/timeSlot 중복 방지</td><td>PASS</td></tr>
+              <tr><td>TC-LAB-004</td><td>Lab</td><td>동일 date + testName 중복 방지</td><td>PASS</td></tr>
+              <tr><td>TC-STAT-003</td><td>Statistics</td><td>Health 수정/삭제 후 체중 통계 갱신</td><td>PASS</td></tr>
+              <tr><td>TC-STAT-007</td><td>Statistics</td><td>Lab unit 없음/불일치 처리</td><td>PASS</td></tr>
+              <tr><td>TC-DB-003</td><td>Persistence</td><td>앱 재실행 후 데이터 유지</td><td>PASS</td></tr>
+              <tr><td>TC-NAV-002</td><td>Navigation</td><td>Add/Edit 화면 Bottom Navigation 미표시</td><td>PASS</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="card detail-card full" id="db-migration">
+        <h2>DB Migration / Data Integrity</h2>
+        <div class="migration-grid">
+          <div><strong>DB v1</strong><span>health_records</span></div>
+          <div><strong>DB v2</strong><span>medications, medication_logs 추가</span></div>
+          <div><strong>DB v3</strong><span>lab_results 추가</span></div>
+        </div>
+        <p>기존 DB를 삭제하거나 초기화하지 않고 onUpgrade Migration으로 확장했으며, HealthRecord 유지, Medication 추가 후 기존 데이터 보존, Lab 추가 후 Health/Medication 보존, 앱 재실행 후 Persistence를 검증했습니다.</p>
+      </article>
+
+      <article class="card detail-card full" id="bug-001">
+        <h2>Visual QA & BUG-001</h2>
+        <div class="timeline-list">
+          <div><strong>V1.0.0 Release</strong><span>Release PASS</span></div>
+          <div><strong>Portfolio Visual QA</strong><span>Bottom Navigation label 불일치 발견</span></div>
+          <div><strong>BUG-001</strong><span>Severity Minor / Priority Medium</span></div>
+          <div><strong>Fix & Retest</strong><span>V1.0.1에서 Retest PASS</span></div>
+          <div><strong>Patch Release</strong><span>Regression PASS / V1.0.1 Patch Release PASS</span></div>
+        </div>
+        <div class="bug-compare">
+          <div><strong>Actual</strong><span>Home / Health / Medication / Lab / Statistics</span></div>
+          <div><strong>Expected</strong><span>홈 / 건강 / 복약 / 검사 / 통계</span></div>
+        </div>
+        <p class="note">STEP 15 당시 테스트 범위에서는 발견 결함이 없었고, BUG-001은 Release 이후 Portfolio Visual QA에서 추가로 발견해 수정 완료한 결함입니다.</p>
+      </article>
+
+      <article class="card detail-card full">
+        <h2>Regression / Release</h2>
+        <ul class="case-list">
+          <li>V1.0.0 Release PASS</li>
+          <li>Portfolio Visual QA에서 BUG-001 발견</li>
+          <li>V1.0.1 BUG-001 Retest PASS</li>
+          <li>V1.0.1 Regression PASS</li>
+          <li>V1.0.1 Patch Release PASS</li>
+        </ul>
+        <p class="note">APK는 Internal Portfolio Release로 관리하며, 이 페이지에서는 다운로드 링크를 제공하지 않습니다.</p>
+      </article>
+
+      <article class="card detail-card full" id="screenshots">
+        <h2>Screenshots</h2>
+        <div class="screenshot-grid">
+          <figure><img class="phone-shot" src="images/my-health-log/02_health_list.png" alt="Health 기록 목록"><figcaption>Health List</figcaption></figure>
+          <figure><img class="phone-shot" src="images/my-health-log/03_health_add_edit.png" alt="Health 수정 화면"><figcaption>Health Add/Edit</figcaption></figure>
+          <figure><img class="phone-shot" src="images/my-health-log/04_medication_today.png" alt="Medication 오늘의 복약 화면"><figcaption>Medication Today</figcaption></figure>
+          <figure><img class="phone-shot" src="images/my-health-log/06_lab_result_list.png" alt="Lab 검사 결과 목록"><figcaption>Lab Result List</figcaption></figure>
+          <figure><img class="phone-shot" src="images/my-health-log/09_statistics_blood_pressure.png" alt="혈압 통계 화면"><figcaption>Statistics Blood Pressure</figcaption></figure>
+          <figure><img class="phone-shot" src="images/my-health-log/10_statistics_lab.png" alt="검사 통계 화면"><figcaption>Statistics Lab</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="card detail-card full">
+        <h2>What I Learned</h2>
+        <ul class="case-list">
+          <li>요구사항과 실제 구현 결과의 일치 여부를 끝까지 확인하는 것이 QA에서 중요하다는 점을 확인했습니다.</li>
+          <li>화면 표시뿐 아니라 DB 상태와 데이터 관계를 함께 검증해야 CRUD 안정성을 명확히 볼 수 있었습니다.</li>
+          <li>기능 추가 시 기존 데이터 Migration과 Regression 범위를 함께 고려해야 함을 경험했습니다.</li>
+          <li>Release 이후에도 다른 관점의 Visual QA에서 결함이 발견될 수 있음을 확인했습니다.</li>
+          <li>기획부터 Release까지 직접 진행하며 기능 간 영향 관계를 더 구체적으로 이해했습니다.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="footer">© 2026 박정은. All rights reserved.</footer>
+</body>
+</html>

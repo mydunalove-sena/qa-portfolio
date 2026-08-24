@@ -1,0 +1,58 @@
+[
+  {
+    "name": "desktop_index_retest",
+    "width": 1440,
+    "metrics": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyTextHasMojibake": false,
+      "badImages": [],
+      "text": "박정은\nQA Engineer\nHome\nAbout\nSkills\nCareer\nProjects\nContact\n박정은\nQA Engineer\n\n기능 검증, 결함 재현, 회귀 테스트 경험을 바탕으로\n제품과 서비스의 품질을 안정적으로 검증하는 QA입니다.\n\nAbout\n\n제품과 기능의 품질을 검증하기 위해 기능 검증, 결함 재현, 회귀 테스트, 테스트 결과 정리 업무를 수행했습니다. 이슈 발생 시 버전, 설정값, 환경 조건과 재현 절차를 정리해 공유했습니다.\n\n품질 중심\n문제 해결\n데이터 기반 개선\nSkills\n검증 항목 수행\n\n정해진 검증 항목과 테스트 케이스를 기준으로\n기능 동작과 결과를 확인\n\n기능 검증\n\n기능 흐름과 화면 표시를 기준으로\n주요 동작을 꼼꼼히 확인\n\n회귀 테스트\n\n변경 후 기존 기능이 유지되는지\n반복 항목을 기준으로 재확인\n\n결함 재현\n\n이슈 발생 조건을 정리하고\n재현 절차를 문서화\n\n테스트 환경 관리\n\n테스트 장비, 버전, 설정값을 관리하고\n검증 조건을 일정하게 유지\n\n문서"
+    },
+    "consoleMessages": [],
+    "failed": [],
+    "responses404": []
+  },
+  {
+    "name": "desktop_case_retest",
+    "width": 1440,
+    "metrics": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyTextHasMojibake": false,
+      "badImages": [],
+      "text": "박정은\nQA Engineer\nHome\nAbout\nSkills\nCareer\nProjects\nContact\n\nQA Case Study · V1.0.1\n\nMy Health Log\n\nFlutter 기반 개인 건강 기록 앱을 직접 기획하고 구현한 뒤, 요구사항 기반 QA부터 Regression, Android Release까지 검증한 개인 QA 프로젝트입니다.\n\nProjects로 돌아가기\nProject Overview\nProject Type\nPersonal QA Project\nPlatform\nAndroid / Flutter\nData\nSQLite Local DB v3\nVersion\n1.0.1+2\nScope\nPlanning / Implementation / QA / Regression / Release\nProblem\n\n체중, 혈압, 수분, 운동, 수면, 컨디션, 복약, 검사 결과를 날짜 기준으로 기록하고 비교하기 어렵다는 문제를 V1 범위로 정의했습니다.\n\nApp Structure\nHome\n오늘"
+    },
+    "consoleMessages": [],
+    "failed": [],
+    "responses404": []
+  },
+  {
+    "name": "mobile_index_retest",
+    "width": 390,
+    "metrics": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "bodyTextHasMojibake": false,
+      "badImages": [],
+      "text": "박정은\nQA Engineer\nHome\nAbout\nSkills\nCareer\nProjects\nContact\n박정은\nQA Engineer\n\n기능 검증, 결함 재현, 회귀 테스트 경험을 바탕으로\n제품과 서비스의 품질을 안정적으로 검증하는 QA입니다.\n\nAbout\n\n제품과 기능의 품질을 검증하기 위해 기능 검증, 결함 재현, 회귀 테스트, 테스트 결과 정리 업무를 수행했습니다. 이슈 발생 시 버전, 설정값, 환경 조건과 재현 절차를 정리해 공유했습니다.\n\n품질 중심\n문제 해결\n데이터 기반 개선\nSkills\n검증 항목 수행\n\n정해진 검증 항목과 테스트 케이스를 기준으로\n기능 동작과 결과를 확인\n\n기능 검증\n\n기능 흐름과 화면 표시를 기준으로\n주요 동작을 꼼꼼히 확인\n\n회귀 테스트\n\n변경 후 기존 기능이 유지되는지\n반복 항목을 기준으로 재확인\n\n결함 재현\n\n이슈 발생 조건을 정리하고\n재현 절차를 문서화\n\n테스트 환경 관리\n\n테스트 장비, 버전, 설정값을 관리하고\n검증 조건을 일정하게 유지\n\n문서"
+    },
+    "consoleMessages": [],
+    "failed": [],
+    "responses404": []
+  },
+  {
+    "name": "mobile_case_retest",
+    "width": 390,
+    "metrics": {
+      "scrollWidth": 636,
+      "clientWidth": 390,
+      "bodyTextHasMojibake": false,
+      "badImages": [],
+      "text": "박정은\nQA Engineer\nHome\nAbout\nSkills\nCareer\nProjects\nContact\n\nQA Case Study · V1.0.1\n\nMy Health Log\n\nFlutter 기반 개인 건강 기록 앱을 직접 기획하고 구현한 뒤, 요구사항 기반 QA부터 Regression, Android Release까지 검증한 개인 QA 프로젝트입니다.\n\nProjects로 돌아가기\nProject Overview\nProject Type\nPersonal QA Project\nPlatform\nAndroid / Flutter\nData\nSQLite Local DB v3\nVersion\n1.0.1+2\nScope\nPlanning / Implementation / QA / Regression / Release\nProblem\n\n체중, 혈압, 수분, 운동, 수면, 컨디션, 복약, 검사 결과를 날짜 기준으로 기록하고 비교하기 어렵다는 문제를 V1 범위로 정의했습니다.\n\nApp Structure\nHome\n오늘"
+    },
+    "consoleMessages": [],
+    "failed": [],
+    "responses404": []
+  }
+]
