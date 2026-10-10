@@ -44,7 +44,7 @@
 .health-log-overview .mhl-evidence summary { padding: 20px 24px; color: var(--navy); font-weight: 700; cursor: pointer; }
 .health-log-overview .mhl-evidence[open] summary { border-bottom: 1px solid var(--mhl-line); background: #f5f9f8; }
 .health-log-overview .mhl-evidence-body { padding: 24px; }
-.health-log-overview .mhl-evidence-body h3 { font-size: 20px; margin: 28px 0 14px; }
+.health-log-overview .mhl-evidence-body h3 { font-size: 20px; margin: 28px 0 14px; word-break: keep-all; overflow-wrap: anywhere; }
 .health-log-overview .mhl-evidence-body h3:first-child { margin-top: 0; }
 .health-log-overview .mhl-evidence-body p { margin: 0 0 14px; }
 .health-log-overview .mhl-evidence-body .eyebrow { color: var(--mhl-teal); font-size: 15px; }
