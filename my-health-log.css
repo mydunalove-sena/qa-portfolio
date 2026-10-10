@@ -70,8 +70,8 @@
 @media (max-width: 800px) {
  .health-log-overview .mhl-intro h1 { font-size: 52px; }
  .health-log-overview .mhl-lead { font-size: 34px; }
- .health-log-overview .mhl-summary-row { grid-template-columns: 88px minmax(0,1fr); gap: 8px; }
- .health-log-overview .mhl-summary dt { grid-template-columns: 18px 62px; }
+ .health-log-overview .mhl-summary-row { grid-template-columns: 94px minmax(0,1fr); gap: 8px; }
+ .health-log-overview .mhl-summary dt { grid-template-columns: 18px 70px; gap: 6px; }
  .health-log-overview .mhl-summary dt svg { width: 18px; height: 20px; }
 }
 @media (max-width: 720px) {
