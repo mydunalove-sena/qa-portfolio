@@ -1,0 +1,79 @@
+/* My Health Log only: shared navigation and other pages retain style.css. */
+.health-log-overview { --mhl-teal: #326b69; --mhl-line: #dce5e6; }
+.health-log-overview main { font-size: 17px; }
+.health-log-overview main h1,
+.health-log-overview main h2,
+.health-log-overview main h3 { color: var(--navy); line-height: 1.4; }
+.health-log-overview main h2 { margin: 0 0 22px; font-size: 28px; word-break: keep-all; overflow-wrap: anywhere; }
+.health-log-overview main p { overflow-wrap: anywhere; }
+.health-log-overview .mhl-hero { padding: 36px 0; border-bottom: 1px solid var(--mhl-line); background: #fafcfc; }
+.health-log-overview .mhl-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 56px; align-items: center; }
+.health-log-overview .mhl-intro { min-width: 0; }
+.health-log-overview .mhl-kicker { color: var(--mhl-teal); font-weight: 700; font-size: 15px; margin: 0 0 10px; }
+.health-log-overview .mhl-intro h1 { font-size: 42px; margin: 0 0 14px; letter-spacing: -.035em; }
+.health-log-overview .mhl-lead { font-size: 30px; font-weight: 700; line-height: 1.5; color: var(--navy); margin: 0 0 18px; }
+.health-log-overview .mhl-description { margin: 0 0 20px; color: #445064; }
+.health-log-overview .mhl-back { display: inline-block; color: var(--mhl-teal); padding: 8px 0; font-size: 15px; font-weight: 700; }
+.health-log-overview .mhl-demo { margin: 0; text-align: center; }
+.health-log-overview .mhl-demo img { width: 135px; height: auto; margin: auto; border: 1px solid var(--mhl-line); border-radius: 8px; }
+.health-log-overview .mhl-demo figcaption { font-size: 13px; line-height: 1.6; color: #526174; margin-top: 10px; }
+.health-log-overview .mhl-demo figcaption a { display: inline-block; padding: 5px; color: var(--mhl-teal); text-decoration: underline; text-underline-offset: 3px; }
+.health-log-overview .mhl-section { padding: 44px 0; border-bottom: 1px solid var(--mhl-line); }
+.health-log-overview .mhl-cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.health-log-overview .mhl-case { display: flex; flex-direction: column; min-width: 0; padding: 26px; border: 1px solid var(--mhl-line); border-radius: 8px; background: #fff; }
+.health-log-overview .mhl-case-top { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.health-log-overview .mhl-number { font-size: 30px; color: var(--mhl-teal); font-weight: 700; line-height: 1; }
+.health-log-overview .mhl-category { color: #526174; font-size: 15px; font-weight: 700; }
+.health-log-overview .mhl-case h3 { margin: 0 0 22px; font-size: 22px; word-break: keep-all; overflow-wrap: anywhere; }
+.health-log-overview .mhl-summary { margin: 0 0 24px; }
+.health-log-overview .mhl-summary dt { color: var(--mhl-teal); font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.health-log-overview .mhl-summary dd { margin: 0 0 18px; line-height: 1.65; word-break: keep-all; overflow-wrap: anywhere; }
+.health-log-overview .mhl-summary dd:last-child { margin-bottom: 0; }
+.health-log-overview .mhl-evidence-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding: 14px 0 0; border: 0; border-top: 1px solid var(--mhl-line); background: transparent; color: var(--mhl-teal); font: inherit; font-size: 15px; font-weight: 700; text-align: left; cursor: pointer; }
+.health-log-overview .mhl-evidence-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.health-log-overview .mhl-role-section { background: #f5f9f8; }
+.health-log-overview .mhl-roles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; }
+.health-log-overview .mhl-roles h3 { font-size: 20px; margin: 0 0 10px; }
+.health-log-overview .mhl-roles p { margin: 0; }
+.health-log-overview .mhl-collaboration { border-top: 1px solid var(--mhl-line); padding-top: 20px; margin: 24px 0 0; }
+.health-log-overview .mhl-collaboration strong { color: var(--mhl-teal); margin-right: 12px; }
+.health-log-overview .mhl-role-note { color: #526174; font-size: 15px; margin: 12px 0 0; }
+.health-log-overview .mhl-evidence-intro { color: #526174; margin: 0 0 24px; max-width: 850px; }
+.health-log-overview .mhl-evidence-list { display: grid; gap: 12px; }
+.health-log-overview .mhl-evidence { min-width: 0; border: 1px solid var(--mhl-line); border-radius: 8px; scroll-margin-top: 105px; }
+.health-log-overview .mhl-evidence summary { padding: 20px 24px; color: var(--navy); font-weight: 700; cursor: pointer; }
+.health-log-overview .mhl-evidence[open] summary { border-bottom: 1px solid var(--mhl-line); background: #f5f9f8; }
+.health-log-overview .mhl-evidence-body { padding: 24px; }
+.health-log-overview .mhl-evidence-body h3 { font-size: 20px; margin: 28px 0 14px; }
+.health-log-overview .mhl-evidence-body h3:first-child { margin-top: 0; }
+.health-log-overview .mhl-evidence-body p { margin: 0 0 14px; }
+.health-log-overview .mhl-evidence-body .eyebrow { color: var(--mhl-teal); font-size: 15px; }
+.health-log-overview .mhl-evidence-body .note { border-left: 3px solid #7fa6a1; padding-left: 14px; color: #526174 !important; }
+.health-log-overview .qa-flow { margin: 20px 0; grid-template-columns: 180px minmax(0, 1fr); }
+.health-log-overview .case-table th,
+.health-log-overview .case-table td { font-size: 16px; }
+.health-log-overview .screenshot-grid figure { max-width: 180px; }
+.health-log-overview main :is(button, summary):focus-visible { outline: 3px solid var(--mhl-teal); outline-offset: 4px; border-radius: 4px; }
+@media (max-width: 1100px) {
+  .health-log-overview .mhl-cases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .health-log-overview .mhl-hero-grid { grid-template-columns: minmax(0, 1fr) 220px; gap: 28px; }
+  .health-log-overview .mhl-lead { font-size: 26px; }
+  .health-log-overview .mhl-desktop-break { display: none; }
+}
+@media (max-width: 720px) {
+  .health-log-overview .mhl-hero { padding: 28px 0; }
+  .health-log-overview .mhl-hero-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .health-log-overview .mhl-intro h1 { font-size: 34px; }
+  .health-log-overview .mhl-lead { font-size: 25px; }
+  .health-log-overview .mhl-demo img { width: 108px; height: auto; }
+  .health-log-overview .mhl-section { padding: 32px 0; }
+  .health-log-overview main h2 { font-size: 24px; }
+  .health-log-overview .mhl-cases,
+  .health-log-overview .mhl-roles { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .health-log-overview .mhl-case { padding: 24px; }
+  .health-log-overview .mhl-case h3 { font-size: 22px; }
+  .health-log-overview .mhl-evidence { scroll-margin-top: 210px; }
+  .health-log-overview .mhl-evidence summary { padding: 18px; }
+  .health-log-overview .mhl-evidence-body { padding: 18px; }
+  .health-log-overview .qa-flow { grid-template-columns: minmax(0, 1fr); }
+}

@@ -6,8 +6,10 @@
   <title>My Health Log | QA Case Study</title>
   <link rel="icon" href="images/favicon.svg">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="my-health-log.css">
+  <script src="my-health-log.js" defer></script>
 </head>
-<body>
+<body class="health-log-overview">
 <header class="site-header">
   <div class="container nav-wrap">
     <a class="brand" href="index.html"><span class="brand-mark"></span><span>박정은<small>QA Engineer</small></span></a>
@@ -22,73 +24,91 @@
   </div>
 </header>
 <main>
-  <section class="page-hero case-hero" id="case-hero">
-    <div class="container case-hero-grid">
-      <div>
-        <p class="eyebrow">개인 QA 사례 · Android 실사용과 반복 검수</p>
-        <h1>My Health Log</h1>
-        <p>건강 기록 앱을 실제로 사용하며 입력과 기록 보존의 문제를 발견했습니다. 요구사항과 우선순위를 정하고, AI/Codex의 구현 결과를 검수하며 개선 후 기존 동작도 함께 확인한 QA 사례입니다.</p>
-        <a class="project-link hero-link" href="projects.html">Projects로 돌아가기</a>
+  <section class="mhl-hero" id="case-hero" aria-labelledby="mhl-title">
+    <div class="container mhl-hero-grid">
+      <div class="mhl-intro">
+        <p class="mhl-kicker">Android 건강 기록 앱 · 개인 QA 사례</p>
+        <h1 id="mhl-title">My Health Log</h1>
+        <p class="mhl-lead">실사용 문제를 발견하고,<br>개선 결과를 검증했습니다.</p>
+        <p class="mhl-description">실제 사용에서 발견한 문제를 요구사항으로 정리하고,<br class="mhl-desktop-break"> AI/Codex의 구현 결과와 기존 동작을 함께 확인했습니다.</p>
+        <a class="mhl-back" href="projects.html">← Projects로 돌아가기</a>
       </div>
-      <div class="case-hero-shot">
-        <figure><img src="images/my-health-log/v1-captured/01_home_dashboard.png" alt="V1 에뮬레이터의 데모 데이터 홈 화면"><figcaption>V1 화면 예시 · 데모 데이터</figcaption></figure>
-      </div>
+      <figure class="mhl-demo">
+        <a href="images/my-health-log/v1-captured/01_home_dashboard.png" aria-label="V1 데모 홈 화면 원본 크게 보기"><img src="images/my-health-log/v1-captured/01_home_dashboard.png" width="1080" height="2400" alt="V1.0.0 에뮬레이터에서 데모 데이터로 촬영한 실제 앱 홈 화면"></a>
+        <figcaption>V1.0.0 데모 화면 · 2026-08-22<br>앱 소개용 · V3 개선 검증 증거 아님<br><a href="images/my-health-log/v1-captured/01_home_dashboard.png">원본 크게 보기</a></figcaption>
+      </figure>
     </div>
   </section>
-  <section class="section">
-    <div class="container detail-grid">
-      <article class="card detail-card">
-        <h2>사용자 문제와 검증 방향</h2>
-        <p>반복 입력에서 수치가 잘리거나, 복약 기록의 의미가 바뀌거나, 백업에서 설정이 빠지면 사용자는 기록을 신뢰하기 어렵습니다. 기능이 있다는 사실보다 실제 사용 조건에서 값과 과거 기록이 유지되는지를 확인했습니다.</p>
-        <ul class="case-list"><li>입력값과 표시값의 일치</li><li>정기 복약과 필요 시 복약(PRN)의 구분</li><li>복원 후 데이터와 설정의 보존</li></ul>
-      </article>
-      <article class="card detail-card" id="roles">
-        <h2>수행 역할</h2>
-        <ul class="case-list">
-          <li><strong>직접 수행:</strong> 실제 사용, 문제 발견, 요구사항 선택·우선순위 결정, 실기기 확인과 최종 판단</li>
-          <li><strong>AI 협업:</strong> 요구사항 구체화, 시나리오·구현 방향 정리, Codex 작업 지시와 결과 검수</li>
-          <li><strong>AI·Codex 중심:</strong> 코드 구현, 테스트 코드 작성, 반복 자동 검증과 기술 수정</li>
-        </ul>
-      </article>
-
-      <article class="card detail-card full" id="case-input">
-        <p class="eyebrow">사례 01 · V3.4.0 · 2026-08-30 기록</p>
-        <h2>검사 수치가 끝까지 보이는 입력 화면</h2>
+  <section class="mhl-section" aria-labelledby="cases-title">
+    <div class="container">
+      <div class="mhl-section-heading"><p class="mhl-kicker">사용자 문제 → 개선 방향 → 확인 내용</p><h2 id="cases-title">실사용에서 찾은 세 가지 개선 사례</h2></div>
+      <div class="mhl-cases"><article class="mhl-case" aria-labelledby="overview-01">
+  <div class="mhl-case-top"><span class="mhl-number">01</span><span class="mhl-category">검사 입력</span></div>
+  <h3 id="overview-01">수치가 끝까지 보이도록</h3>
+  <dl class="mhl-summary"><dt>문제</dt><dd>좁은 입력란에서 소수 값 확인이 어려움</dd><dt>개선 방향</dt><dd>전체 값 표시 · 기존 기록 보존</dd><dt>확인 내용</dt><dd>실기기 입력 표시 · 통계 반영</dd></dl>
+  <button class="mhl-evidence-link" type="button" aria-expanded="false" aria-controls="case-input" aria-label="사례 01 검사 입력 검증 범위·근거 보기">검증 범위·근거 보기 <span aria-hidden="true">↗</span></button>
+</article>
+<article class="mhl-case" aria-labelledby="overview-02">
+  <div class="mhl-case-top"><span class="mhl-number">02</span><span class="mhl-category">PRN 기록</span></div>
+  <h3 id="overview-02">실제 복용한 약만 표시</h3>
+  <dl class="mhl-summary"><dt>문제</dt><dd>약 등록과 실제 복용을 혼동할 여지</dd><dt>개선 방향</dt><dd>실제 복용 기록 중심으로 표시</dd><dt>확인 내용</dt><dd>당일 표시 · 과거 편집 화면 확인</dd></dl>
+  <button class="mhl-evidence-link" type="button" aria-expanded="false" aria-controls="case-medication" aria-label="사례 02 PRN 기록 검증 범위·근거 보기">검증 범위·근거 보기 <span aria-hidden="true">↗</span></button>
+</article>
+<article class="mhl-case" aria-labelledby="overview-03">
+  <div class="mhl-case-top"><span class="mhl-number">03</span><span class="mhl-category">백업·복원</span></div>
+  <h3 id="overview-03">기록과 설정을 함께 복원</h3>
+  <dl class="mhl-summary"><dt>문제</dt><dd>검사 항목 설정이 백업에서 누락</dd><dt>개선 방향</dt><dd>설정 포함 · 이전 백업 호환</dd><dt>확인 내용</dt><dd>설정 복원 · 재실행 후 유지 확인</dd></dl>
+  <button class="mhl-evidence-link" type="button" aria-expanded="false" aria-controls="case-backup" aria-label="사례 03 백업·복원 검증 범위·근거 보기">검증 범위·근거 보기 <span aria-hidden="true">↗</span></button>
+</article></div>
+    </div>
+  </section>
+  <section class="mhl-section mhl-role-section" id="roles" aria-labelledby="roles-title">
+    <div class="container">
+      <h2 id="roles-title">직접 판단한 일과 AI가 구현한 일</h2>
+      <div class="mhl-roles">
+        <div><h3>직접 수행</h3><p>실제 사용 · 문제 발견 · 요구사항과 우선순위 결정 · Android 실기기 확인 · 최종 판단</p></div>
+        <div><h3>AI/Codex</h3><p>코드 구현 · 테스트 코드 작성 · 자동 검증 · 기술 수정</p></div>
+      </div>
+      <p class="mhl-collaboration"><strong>AI 협업</strong> 요구사항 구체화, 시나리오·구현 방향 정리, Codex 작업 지시와 결과 검수</p>
+      <p class="mhl-role-note">본인의 QA 역할과 AI/Codex의 개발·자동 검증 역할을 구분합니다. 코드 구현과 자동 테스트 작성·실행을 직접 수행한 개발 실적으로 제시하지 않습니다.</p>
+    </div>
+  </section>
+  <section class="mhl-section" aria-labelledby="evidence-title">
+    <div class="container">
+      <h2 id="evidence-title">필요한 근거만 펼쳐 보기</h2>
+      <p class="mhl-evidence-intro">V3.4~V3.6 원본 QA 기록의 버전·발견 조건·검수 범위·한계를 보존했습니다. 자동 회귀와 Android 실기기 확인은 구분해서 읽어 주세요.</p>
+      <div class="mhl-evidence-list">
+        <details class="mhl-evidence" id="case-input"><summary id="case-input-title">01 · 검사 입력 검증 범위와 근거</summary><div class="mhl-evidence-body"><p class="eyebrow">사례 01 · V3.4.0 · 2026-08-30 기록</p>
+        <h3>검사 수치가 끝까지 보이는 입력 화면</h3>
         <dl class="qa-flow">
           <dt>사용자 문제 · 발견 조건</dt><dd>좁은 검사 입력란에서 소수 값의 전체 문자열을 확인하기 어려웠습니다. 같은 검사 항목이 서로 다른 이름으로 저장되어 통계에서 빠지는 문제도 확인했습니다.</dd>
           <dt>요구사항 · 우선순위</dt><dd>저장 전에 입력값을 읽을 수 있어야 하며, 이미 알려진 이름 차이는 통계에 포함해야 한다고 정리했습니다. 입력 안전성과 기존 기록 보존을 우선하고, 유사한 사용자 항목까지 임의 통합하지 않도록 범위를 제한했습니다.</dd>
           <dt>AI 구현 · 본인 검수</dt><dd>입력란 너비와 표시 방식, 명시적인 이름 대응 규칙은 AI/Codex가 구현했습니다. 본인은 실제 입력 흐름과 화면을 검수했으며, 원본 QA 기록에는 Galaxy SM-S918N에서 소수·정수 입력 표시와 통계 확인 결과가 남아 있습니다.</dd>
           <dt>개선 후 반복 확인</dt><dd>원본 테스트와 QA 문서에서 소수 문자열 표시, 저장값 유지, 기존 통계 반영을 확인했습니다. 같은 날짜의 기존 행은 병합·덮어쓰기·삭제하지 않는 조건도 회귀 범위에 포함했습니다.</dd>
         </dl>
-        <p class="note">범위: 직접 입력과 알려진 검사명 대응. 단위 변환이나 임의의 유사 이름 추정은 포함하지 않습니다.</p>
-      </article>
-
-      <article class="card detail-card full" id="case-medication">
-        <p class="eyebrow">사례 02 · V3.5.0 · 2026-08-30 기록</p>
-        <h2>필요 시 복약을 실제 기록으로 구분</h2>
+        <p class="note">범위: 직접 입력과 알려진 검사명 대응. 단위 변환이나 임의의 유사 이름 추정은 포함하지 않습니다.</p></div></details>
+<details class="mhl-evidence" id="case-medication"><summary id="case-medication-title">02 · PRN 기록 검증 범위와 근거</summary><div class="mhl-evidence-body"><p class="eyebrow">사례 02 · V3.5.0 · 2026-08-30 기록</p>
+        <h3>필요 시 복약을 실제 기록으로 구분</h3>
         <dl class="qa-flow">
           <dt>사용자 문제 · 발견 조건</dt><dd>필요할 때 복용하는 약(PRN)은 등록되어 있다는 이유만으로 미복용이나 복용 권장처럼 보이면 오해를 만들 수 있습니다. 같은 날 여러 번 복용한 기록과 과거 기록 수정도 구분할 필요가 있었습니다.</dd>
           <dt>요구사항 · 우선순위</dt><dd>Home에는 오늘 실제 저장된 PRN 기록만 표시하고, 첫 복용과 추가 복용을 구분하도록 정리했습니다. 과거 용량을 현재 값으로 추정해 채우지 않고 기록의 의미를 유지하는 것을 우선했습니다.</dd>
           <dt>AI 구현 · 본인 검수</dt><dd>Home 표시 조건과 복용·추가 복용, 과거 기록 편집은 AI/Codex가 구현했습니다. 본인은 사용자 관점에서 표시와 흐름을 검수했습니다. 원본 실기기 기록은 Home의 당일 PRN 표시와 과거 기록 입력·편집 화면 진입 확인을 포함합니다.</dd>
           <dt>개선 후 반복 확인</dt><dd>자동 회귀 범위에는 기록이 없는 날의 미표시, 같은 날 추가 기록의 독립 저장, 편집 시 기록 식별자와 관련 증상 관계 보존이 포함됩니다.</dd>
         </dl>
-        <p class="note">실기기 확인은 기존 데이터를 보호한 화면 smoke 범위입니다. 과거 기록의 파괴적 저장을 모두 실기기에서 검증했다고 표현하지 않습니다.</p>
-      </article>
-
-      <article class="card detail-card full" id="case-backup">
-        <p class="eyebrow">사례 03 · V3.6.0 · 2026-08-31 기록</p>
-        <h2>검사 기록뿐 아니라 설정까지 복원</h2>
+        <p class="note">실기기 확인은 기존 데이터를 보호한 화면 smoke 범위입니다. 과거 기록의 파괴적 저장을 모두 실기기에서 검증했다고 표현하지 않습니다.</p></div></details>
+<details class="mhl-evidence" id="case-backup"><summary id="case-backup-title">03 · 백업·복원 검증 범위와 근거</summary><div class="mhl-evidence-body"><p class="eyebrow">사례 03 · V3.6.0 · 2026-08-31 기록</p>
+        <h3>검사 기록뿐 아니라 설정까지 복원</h3>
         <dl class="qa-flow">
           <dt>사용자 문제 · 발견 조건</dt><dd>기존 백업에는 검사 결과가 포함되지만 검사 항목 설정은 빠져 있었습니다. 결과값이 남아도 선택한 관리 유형·표시 항목·사용자 정의 항목이 복원되지 않으면 이전 입력 환경을 잃을 수 있었습니다.</dd>
           <dt>요구사항 · 우선순위</dt><dd>설정도 백업 계약에 포함하고, 이전 백업을 계속 읽을 수 있어야 한다고 정리했습니다. 복원 실패 시 기존 DB와 설정을 보존하는 조건을 우선했습니다.</dd>
           <dt>AI 구현 · 본인 검수</dt><dd>백업 형식 확장과 복원·롤백 코드는 AI/Codex가 구현했습니다. 본인은 복원 범위와 데이터 보존을 검수했습니다. 원본 기록에는 Galaxy SM-S918N에서 설정만 변경한 뒤 백업으로 되돌리고 재실행 후 유지 여부를 확인한 결과가 있습니다.</dd>
           <dt>개선 후 반복 확인</dt><dd>자동 회귀는 구형 백업 호환, 사용자 정의 단위의 빈 값 유지, 잘못된 설정 거부, 실패 시 DB·설정 롤백을 포함했습니다. 실기기에서는 기존 기록이 남아 있는지 함께 확인했습니다.</dd>
         </dl>
-        <p class="note">실기기 근거는 설정 복원과 기존 데이터 존재 확인 범위입니다. 모든 개인 데이터를 삭제한 뒤 전체 복원하는 실험과는 구분합니다.</p>
-      </article>
-
-      <article class="card detail-card full" id="qa-strategy">
-        <h2>검증 범위와 결과 판단</h2>
+        <p class="note">실기기 근거는 설정 복원과 기존 데이터 존재 확인 범위입니다. 모든 개인 데이터를 삭제한 뒤 전체 복원하는 실험과는 구분합니다.</p></div></details>
+        <details class="mhl-evidence" id="qa-strategy"><summary>전체 검증 범위·데이터 보호 조건</summary><div class="mhl-evidence-body"><h3>사용자 문제와 검증 방향</h3>
+        <p>반복 입력에서 수치가 잘리거나, 복약 기록의 의미가 바뀌거나, 백업에서 설정이 빠지면 사용자는 기록을 신뢰하기 어렵습니다. 기능이 있다는 사실보다 실제 사용 조건에서 값과 과거 기록이 유지되는지를 확인했습니다.</p>
+        <ul class="case-list"><li>입력값과 표시값의 일치</li><li>정기 복약과 필요 시 복약(PRN)의 구분</li><li>복원 후 데이터와 설정의 보존</li></ul>
+<h3>검증 범위와 결과 판단</h3>
         <div class="table-wrap" tabindex="0" role="region" aria-label="사례별 검증 범위 표, 좁은 화면에서 가로 스크롤 가능">
           <table class="case-table">
             <thead><tr><th scope="col">사례</th><th scope="col">자동 회귀 · AI/Codex 중심</th><th scope="col">원본 실기기 QA 기록 범위</th></tr></thead>
@@ -100,27 +120,19 @@
           </table>
         </div>
         <p class="note">기능별 반복 검증과 Android 실기기 확인을 구분해 기록했습니다. 자동 테스트 수치를 본인의 코딩 실적으로 제시하지 않습니다.</p>
-      </article>
-
-      <article class="card detail-card full" id="screenshots">
-        <h2>초기 앱 화면 예시</h2>
+<h3>QA 판단을 위한 기술 배경</h3>
+        <p>Android / Flutter와 로컬 SQLite 기반입니다. 저장값, 화면 표시, 과거 기록과 백업 설정의 관계를 검증 대상으로 삼았습니다. 구현 구조보다 변경이 사용자 기록에 미치는 영향을 중심으로 범위를 정했습니다.</p>
+<h3>검증 경계와 배운 점</h3>
+        <p>사례의 기준은 V3.4~V3.6 원본 QA·변경 기록입니다. 검사 사진 입력과 혈압·체중 사진 인식은 이 세 사례의 검증 범위에 포함하지 않았습니다. iOS 출시나 의료적 판단 기능을 제시하지 않습니다.</p>
+        <p class="note">실사용 문제를 요구사항으로 바꾸고, 개선된 기능과 기존 동작을 함께 확인하는 경험을 쌓았습니다. 실행 환경과 데이터 보호로 확인하지 못한 범위도 결과에 남기는 것을 중요하게 생각합니다.</p></div></details>
+        <details class="mhl-evidence" id="screenshots"><summary id="screenshots-title">V1 데모 화면과 촬영 근거 보기</summary><div class="mhl-evidence-body"><h3>초기 앱 화면 예시</h3>
         <p>아래는 2026-08-22에 V1.0.0 UI와 데모 데이터를 사용해 포트폴리오 에뮬레이터에서 촬영한 실제 앱 화면입니다. 개인 건강정보와 목업은 포함하지 않았으며, 위 V3 개선 사례의 최신 화면이나 재검증 증거는 아닙니다.</p>
         <div class="screenshot-grid">
           <figure><a href="images/my-health-log/v1-captured/01_home_dashboard.png"><img class="phone-shot" src="images/my-health-log/v1-captured/01_home_dashboard.png" alt="V1 데모 데이터의 홈 대시보드, 원본 이미지 열기"></a><figcaption>Home · V1 데모 화면</figcaption></figure>
           <figure><a href="images/my-health-log/v1-captured/04_medication_today.png"><img class="phone-shot" src="images/my-health-log/v1-captured/04_medication_today.png" alt="V1 정기 복약 화면, PRN 개선 전 예시, 원본 이미지 열기"></a><figcaption>정기 복약 · V1 데모 화면</figcaption></figure>
           <figure><a href="images/my-health-log/v1-captured/06_lab_result_list.png"><img class="phone-shot" src="images/my-health-log/v1-captured/06_lab_result_list.png" alt="V1 검사 결과 목록의 데모 데이터, 원본 이미지 열기"></a><figcaption>검사 목록 · V1 데모 화면</figcaption></figure>
-        </div>
-      </article>
-
-      <article class="card detail-card">
-        <h2>QA 판단을 위한 기술 배경</h2>
-        <p>Android / Flutter와 로컬 SQLite 기반입니다. 저장값, 화면 표시, 과거 기록과 백업 설정의 관계를 검증 대상으로 삼았습니다. 구현 구조보다 변경이 사용자 기록에 미치는 영향을 중심으로 범위를 정했습니다.</p>
-      </article>
-      <article class="card detail-card">
-        <h2>검증 경계와 배운 점</h2>
-        <p>사례의 기준은 V3.4~V3.6 원본 QA·변경 기록입니다. 검사 사진 입력과 혈압·체중 사진 인식은 이 세 사례의 검증 범위에 포함하지 않았습니다. iOS 출시나 의료적 판단 기능을 제시하지 않습니다.</p>
-        <p class="note">실사용 문제를 요구사항으로 바꾸고, 개선된 기능과 기존 동작을 함께 확인하는 경험을 쌓았습니다. 실행 환경과 데이터 보호로 확인하지 못한 범위도 결과에 남기는 것을 중요하게 생각합니다.</p>
-      </article>
+        </div></div></details>
+      </div>
     </div>
   </section>
 </main>
