@@ -12,6 +12,6 @@ body.role-separation .mhl-roles>div{display:block}
 @media(max-width:700px){body.role-separation main .container{width:calc(100% - 36px)}}
 
 /* Keep evidence headings in view and Korean words together at line breaks. */
+html:has(body.role-separation){scroll-behavior:auto}
 body.role-separation #mhl-evidence-section{scroll-margin-top:24px;word-break:keep-all}
 body.role-separation .mhl-evidence-body :is(p,dt,dd,li){min-width:0;word-break:keep-all;overflow-wrap:anywhere}
-

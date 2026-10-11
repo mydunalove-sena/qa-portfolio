@@ -2,6 +2,10 @@
 const evidenceSection = document.getElementById('mhl-evidence-section');
 const evidenceButtons = document.querySelectorAll('.mhl-evidence-link');
 function scrollToEvidence(target) {
+  const firstCase = document.getElementById('case-input');
+  if (!evidenceSection.hidden) {
+    firstCase.style.scrollMarginTop = `${firstCase.getBoundingClientRect().top - evidenceSection.getBoundingClientRect().top + 24}px`;
+  }
   // Keep the section title and introduction visible for the first case.
   const destination = target.id === 'case-input' ? evidenceSection : target;
   destination.scrollIntoView({ behavior: 'instant', block: 'start' });
@@ -61,4 +65,6 @@ function preserveOldSectionLinks() {
 window.addEventListener('hashchange', preserveOldSectionLinks);
 preserveOldSectionLinks();
 window.addEventListener('hashchange', revealLinkedEvidence);
+// Reapply after the browser's initial fragment scroll and stylesheet layout.
+window.addEventListener('load', () => requestAnimationFrame(revealLinkedEvidence), { once: true });
 revealLinkedEvidence();
