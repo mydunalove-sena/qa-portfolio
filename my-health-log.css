@@ -12,7 +12,9 @@
 .health-log-overview .mhl-lead { font-size: 40px; font-weight: 700; line-height: 1.25; color: var(--navy); margin: 0 0 14px; word-break: keep-all; }
 .health-log-overview .mhl-kicker { color: var(--mhl-teal); font-size: 19px; font-weight: 700; line-height: 1.5; margin: 0 0 12px; }
 .health-log-overview .mhl-description { font-size: 17px; line-height: 1.65; color: #445064; margin: 0 0 6px; }
-.health-log-overview .mhl-back { display: inline-block; color: var(--mhl-teal); padding: 4px 0; font-size: 14px; font-weight: 700; }
+.health-log-overview .mhl-back { display: inline-flex; align-items: center; min-height: 44px; max-width: 100%; margin-top: 8px; padding: 10px 18px; border: 1px solid #b8caca; border-radius: 8px; background: #fff; color: var(--navy); font-size: 16px; font-weight: 700; line-height: 1.5; overflow-wrap: anywhere; }
+.health-log-overview .mhl-back:hover { background: #eef5f3; border-color: var(--mhl-teal); }
+.health-log-overview .mhl-back:focus-visible { outline: 3px solid var(--mhl-teal); outline-offset: 4px; }
 .health-log-overview .mhl-demo { margin: 0; text-align: center; padding: 16px 18px 10px; background: #eef5f3; border-radius: 12px; }
 .health-log-overview .mhl-screen-set { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; max-width: 610px; margin: auto; }
 .health-log-overview .mhl-screen { display: block; min-width: 0; }
@@ -35,8 +37,10 @@
 .health-log-overview .mhl-summary dt { display: grid; grid-template-columns: 22px 76px; gap: 8px; align-items: start; font-size: 15px; line-height: 1.5; font-weight: 700; color: var(--mhl-teal); }
 .health-log-overview .mhl-summary dt svg { display: block; width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .health-log-overview .mhl-summary dd { margin: 0; font-size: 16px; line-height: 1.5; word-break: keep-all; overflow-wrap: anywhere; }
-.health-log-overview .mhl-evidence-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding: 14px 0 0; border: 0; background: transparent; color: var(--mhl-teal); font: inherit; font-size: 15px; font-weight: 700; text-align: left; cursor: pointer; }
-.health-log-overview .mhl-evidence-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.health-log-overview .mhl-evidence-link { display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; min-height: 48px; margin-top: auto; padding: 12px 14px; border: 1px solid #c4dcd8; border-radius: 6px; background: #e5f2ef; color: var(--navy); font: inherit; font-size: 16px; line-height: 1.5; font-weight: 700; text-align: left; overflow-wrap: anywhere; cursor: pointer; }
+.health-log-overview .mhl-evidence-link span { flex-shrink: 0; }
+.health-log-overview .mhl-summary:has(+ .mhl-evidence-link) { margin-bottom: 16px; }
+.health-log-overview .mhl-evidence-link:hover { background: #d4e9e4; border-color: var(--mhl-teal); text-decoration: underline; text-underline-offset: 4px; }
 .health-log-overview .mhl-role-section { padding: 0; border: 0; background: #fff; }
 .health-log-overview .mhl-roles { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px; background: #f0f6f4; border: 1px solid var(--mhl-line); border-radius: 8px; padding: 16px 24px; }
 .health-log-overview .mhl-roles>div { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 18px; align-items: baseline; }
@@ -84,9 +88,8 @@
  .health-log-overview .mhl-description { font-size: 16px; }
  .health-log-overview .mhl-desktop-break { display: none; }
  .health-log-overview .mhl-demo { padding: 12px 10px; }
- .health-log-overview .mhl-screen-set { grid-template-columns: 1.45fr 1fr 1fr; gap: 10px; align-items: end; }
+ .health-log-overview .mhl-screen-set { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; align-items: end; }
  .health-log-overview .mhl-screen-frame { height: 155px; }
- .health-log-overview .mhl-screen:first-child .mhl-screen-frame { height: 210px; }
  .health-log-overview .mhl-screen-label { font-size: 12px; }
  .health-log-overview .mhl-demo figcaption { font-size: 12px; }
  .health-log-overview .mhl-cases { grid-template-columns: minmax(0,1fr); gap: 16px; }
