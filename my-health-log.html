@@ -7,69 +7,31 @@
   <link rel="icon" href="images/favicon.svg">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="my-health-log.css">
+  <link rel="stylesheet" href="role-separation.css">
   <script src="my-health-log.js" defer></script>
 </head>
-<body class="health-log-overview">
-<header class="site-header">
-  <div class="container nav-wrap">
-    <a class="brand" href="index.html"><span class="brand-mark"></span><span>박정은<small>QA Engineer</small></span></a>
-    <nav class="menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="skills.html">Skills</a>
-      <a href="career.html">Career</a>
-      <a class="active" href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-<main>
-  <section class="mhl-hero" id="case-hero" aria-labelledby="mhl-title">
-    <div class="container mhl-hero-grid">
-      <div class="mhl-intro">
-        <h1 id="mhl-title">My Health Log</h1>
-        <p class="mhl-lead">실사용 문제를 발견하고,<br>개선 결과를 검증했습니다.</p>
-        <p class="mhl-kicker">Android 건강 기록 앱 · 개인 QA 사례</p>
-        <p class="mhl-description">실제 사용에서 발견한 문제를 요구사항으로 정리하고,<br class="mhl-desktop-break"> AI/Codex의 구현 결과와 기존 동작을 함께 확인했습니다.</p>
-        <a class="mhl-back" href="projects.html">← 프로젝트 목록</a>
-      </div>
-      <figure class="mhl-demo">
-        <div class="mhl-screen-set">
-          <a class="mhl-screen" href="images/my-health-log/device-captured/my-health-log-device-home.png" aria-label="실기기 Home 화면의 상단 미리보기, 원본 전체 보기"><span class="mhl-screen-frame"><img src="images/my-health-log/device-captured/my-health-log-device-home.png" width="1080" height="2316" alt="개인정보를 가린 실기기 앱 Home 화면"></span><span class="mhl-screen-label">Home</span></a>
-          <a class="mhl-screen" href="images/my-health-log/device-captured/my-health-log-device-medication-today.png" aria-label="실기기 정기 복약 화면의 상단 미리보기, 원본 전체 보기"><span class="mhl-screen-frame"><img src="images/my-health-log/device-captured/my-health-log-device-medication-today.png" width="1080" height="2316" alt="개인정보를 가린 실기기 앱 정기 복약 화면"></span><span class="mhl-screen-label">정기 복약</span></a>
-          <a class="mhl-screen" href="images/my-health-log/device-captured/my-health-log-device-lab-result-list.png" aria-label="실기기 검사 목록 화면의 상단 미리보기, 원본 전체 보기"><span class="mhl-screen-frame"><img src="images/my-health-log/device-captured/my-health-log-device-lab-result-list.png" width="1080" height="2316" alt="개인정보를 가린 실기기 앱 검사 목록 화면"></span><span class="mhl-screen-label">검사 목록</span></a>
-        </div>
-        <figcaption><strong>실기기 화면 · 앱 소개용</strong><span>개인정보 가림 처리 · 개선 사례의 검증 근거는 아래 별도 기록 참조</span><span>화면 상단 미리보기 · 선택하면 원본 전체 보기</span></figcaption>
-      </figure>
-    </div>
-  </section>
-  <section class="mhl-section mhl-cases-section" aria-label="대표 개선 사례 세 가지">
-    <div class="container">
-      <div class="mhl-cases"><article class="mhl-case" aria-labelledby="overview-01">
-  <div class="mhl-case-top"><span class="mhl-number">01</span><div><span class="mhl-category">검사 입력</span><h3 id="overview-01">수치가 끝까지 보이도록</h3></div></div>
-  <dl class="mhl-summary"><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v6m0 4h.01"/></svg><span>문제</span></dt><dd>좁은 입력란에서 소수 값 확인이 어려움</dd></div><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4 16 12-12 4 4-12 12H4v-4zm10-10 4 4"/></svg><span>개선 방향</span></dt><dd>전체 값 표시 · 기존 기록 보존</dd></div><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4 12 5 5L20 6"/><path d="M20 13v7H4V4h9"/></svg><span>확인 내용</span></dt><dd>실기기 입력 표시 · 통계 반영</dd></div></dl>
+<body class="health-log-overview role-separation"><header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html">QA 검증 사례</a><nav aria-label="보조 메뉴"><a class="profile-return" href="/">← 대표 프로필</a></nav></div></header><main>
+<section class="mhl-hero" id="case-hero"><div class="container"><h1 id="mhl-title">My Health Log</h1><h2 class="mhl-lead">문제 발견부터 개선 결과 확인까지</h2><p class="mhl-description">직접 사용하며 발견한 문제를 요구사항으로 정리하고 실기기에서 검증했습니다.</p></div></section>
+<section class="mhl-section" id="cases" aria-label="세 가지 검증 사례"><div class="container"><ol class="process" aria-label="검증 과정"><li>문제 발견</li><li>요구사항</li><li>검증</li><li>결과</li></ol><div class="mhl-cases"><article class="mhl-case" aria-labelledby="overview-01">
+  <div class="mhl-case-top"><span class="mhl-number">01</span><div><span class="mhl-category">검사 입력</span><h3 id="overview-01">검사 입력값 표시</h3></div></div>
+  <dl class="mhl-summary"><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v6m0 4h.01"/></svg><span>문제</span></dt><dd>좁은 입력란에서 소수 값 확인이 어려움</dd></div><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4 12 5 5L20 6"/><path d="M20 13v7H4V4h9"/></svg><span>확인 내용</span></dt><dd>실기기 입력 표시 · 통계 반영</dd></div></dl>
   <button class="mhl-evidence-link" type="button" aria-expanded="false" aria-controls="case-input" aria-label="사례 01 검사 입력 검증 내용 자세히 보기">검증 내용 자세히 보기 <span aria-hidden="true">→</span></button>
 </article>
 <article class="mhl-case" aria-labelledby="overview-02">
-  <div class="mhl-case-top"><span class="mhl-number">02</span><div><span class="mhl-category">PRN 기록</span><h3 id="overview-02">실제 복용한 약만 표시</h3></div></div>
-  <dl class="mhl-summary"><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v6m0 4h.01"/></svg><span>문제</span></dt><dd>약 등록과 실제 복용을 혼동할 여지</dd></div><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4 16 12-12 4 4-12 12H4v-4zm10-10 4 4"/></svg><span>개선 방향</span></dt><dd>실제 복용 기록 중심으로 표시</dd></div><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4 12 5 5L20 6"/><path d="M20 13v7H4V4h9"/></svg><span>확인 내용</span></dt><dd>당일 표시 · 과거 편집 화면 확인</dd></div></dl>
+  <div class="mhl-case-top"><span class="mhl-number">02</span><div><span class="mhl-category">PRN 기록</span><h3 id="overview-02">실제 PRN 복용 기록</h3></div></div>
+  <dl class="mhl-summary"><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v6m0 4h.01"/></svg><span>문제</span></dt><dd>약 등록과 실제 복용을 혼동할 여지</dd></div><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4 12 5 5L20 6"/><path d="M20 13v7H4V4h9"/></svg><span>확인 내용</span></dt><dd>당일 표시 · 과거 편집 화면 확인</dd></div></dl>
   <button class="mhl-evidence-link" type="button" aria-expanded="false" aria-controls="case-medication" aria-label="사례 02 PRN 기록 검증 내용 자세히 보기">검증 내용 자세히 보기 <span aria-hidden="true">→</span></button>
 </article>
 <article class="mhl-case" aria-labelledby="overview-03">
-  <div class="mhl-case-top"><span class="mhl-number">03</span><div><span class="mhl-category">백업·복원</span><h3 id="overview-03">기록과 설정을 함께 복원</h3></div></div>
-  <dl class="mhl-summary"><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v6m0 4h.01"/></svg><span>문제</span></dt><dd>검사 항목 설정이 백업에서 누락</dd></div><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4 16 12-12 4 4-12 12H4v-4zm10-10 4 4"/></svg><span>개선 방향</span></dt><dd>설정 포함 · 이전 백업 호환</dd></div><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4 12 5 5L20 6"/><path d="M20 13v7H4V4h9"/></svg><span>확인 내용</span></dt><dd>설정 복원 · 재실행 후 유지 확인</dd></div></dl>
+  <div class="mhl-case-top"><span class="mhl-number">03</span><div><span class="mhl-category">백업·복원</span><h3 id="overview-03">설정 백업·복원</h3></div></div>
+  <dl class="mhl-summary"><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v6m0 4h.01"/></svg><span>문제</span></dt><dd>검사 항목 설정이 백업에서 누락</dd></div><div class="mhl-summary-row"><dt><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4 12 5 5L20 6"/><path d="M20 13v7H4V4h9"/></svg><span>확인 내용</span></dt><dd>설정 복원 · 재실행 후 유지 확인</dd></div></dl>
   <button class="mhl-evidence-link" type="button" aria-expanded="false" aria-controls="case-backup" aria-label="사례 03 백업·복원 검증 내용 자세히 보기">검증 내용 자세히 보기 <span aria-hidden="true">→</span></button>
 </article></div>
-    </div>
-  </section>
-  <section class="mhl-section mhl-role-section" id="roles" aria-label="직접 수행과 AI 역할 구분">
-    <div class="container">
-      <div class="mhl-roles">
+    </div></section>
+<section class="mhl-role-section" id="roles" aria-label="직접 수행과 AI 역할 구분"><div class="container"><div class="mhl-roles">
         <div><h3>직접 수행</h3><p>문제 발견 · 우선순위 결정 · Android 실기기 확인</p></div>
         <div><h3>AI/Codex</h3><p>코드 구현 · 테스트 코드 작성 · 자동 검증</p></div>
-      </div>
-    </div>
-  </section>
+      </div><p class="evidence-hint">상세 근거는 검증 버튼을 누르면 표시됩니다.</p></div></section>
   <section class="mhl-section" id="mhl-evidence-section" aria-labelledby="evidence-title" hidden>
     <div class="container">
       <h2 id="evidence-title">필요한 근거만 펼쳐 보기</h2>
@@ -128,7 +90,14 @@
 <h3>검증 경계와 배운 점</h3>
         <p>사례의 기준은 V3.4~V3.6 원본 QA·변경 기록입니다. 검사 사진 입력과 혈압·체중 사진 인식은 이 세 사례의 검증 범위에 포함하지 않았습니다. iOS 출시나 의료적 판단 기능을 제시하지 않습니다.</p>
         <p class="note">실사용 문제를 요구사항으로 바꾸고, 개선된 기능과 기존 동작을 함께 확인하는 경험을 쌓았습니다. 실행 환경과 데이터 보호로 확인하지 못한 범위도 결과에 남기는 것을 중요하게 생각합니다.</p></div></details>
-        <details class="mhl-evidence" id="screenshots"><summary id="screenshots-title">V1 데모 화면과 촬영 근거 보기</summary><div class="mhl-evidence-body"><h3>초기 앱 화면 예시</h3>
+        <details class="mhl-evidence" id="screenshots"><summary id="screenshots-title">V1 데모 화면과 촬영 근거 보기</summary><div class="mhl-evidence-body"><figure class="mhl-demo">
+        <div class="mhl-screen-set">
+          <a class="mhl-screen" href="images/my-health-log/device-captured/my-health-log-device-home.png" aria-label="실기기 Home 화면의 상단 미리보기, 원본 전체 보기"><span class="mhl-screen-frame"><img src="images/my-health-log/device-captured/my-health-log-device-home.png" width="1080" height="2316" alt="개인정보를 가린 실기기 앱 Home 화면"></span><span class="mhl-screen-label">Home</span></a>
+          <a class="mhl-screen" href="images/my-health-log/device-captured/my-health-log-device-medication-today.png" aria-label="실기기 정기 복약 화면의 상단 미리보기, 원본 전체 보기"><span class="mhl-screen-frame"><img src="images/my-health-log/device-captured/my-health-log-device-medication-today.png" width="1080" height="2316" alt="개인정보를 가린 실기기 앱 정기 복약 화면"></span><span class="mhl-screen-label">정기 복약</span></a>
+          <a class="mhl-screen" href="images/my-health-log/device-captured/my-health-log-device-lab-result-list.png" aria-label="실기기 검사 목록 화면의 상단 미리보기, 원본 전체 보기"><span class="mhl-screen-frame"><img src="images/my-health-log/device-captured/my-health-log-device-lab-result-list.png" width="1080" height="2316" alt="개인정보를 가린 실기기 앱 검사 목록 화면"></span><span class="mhl-screen-label">검사 목록</span></a>
+        </div>
+        <figcaption><strong>실기기 화면 · 앱 소개용</strong><span>개인정보 가림 처리 · 개선 사례의 검증 근거는 아래 별도 기록 참조</span><span>화면 상단 미리보기 · 선택하면 원본 전체 보기</span></figcaption>
+      </figure><h3>초기 앱 화면 예시</h3>
         <p>아래는 2026-08-22에 V1.0.0 UI와 데모 데이터를 사용해 포트폴리오 에뮬레이터에서 촬영한 실제 앱 화면입니다. 개인 건강정보와 목업은 포함하지 않았으며, 위 V3 개선 사례의 최신 화면이나 재검증 증거는 아닙니다.</p>
         <div class="screenshot-grid">
           <figure><a href="images/my-health-log/v1-captured/01_home_dashboard.png"><img class="phone-shot" src="images/my-health-log/v1-captured/01_home_dashboard.png" alt="V1 데모 데이터의 홈 대시보드, 원본 이미지 열기"></a><figcaption>Home · V1 데모 화면</figcaption></figure>
@@ -138,7 +107,4 @@
       </div>
     </div>
   </section>
-</main>
-<footer class="footer">© 2026 박정은. All rights reserved.</footer>
-</body>
-</html>
+</main><footer class="footer">© 2026 박정은</footer></body></html>
