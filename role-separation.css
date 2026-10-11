@@ -10,3 +10,7 @@ body.role-separation .mhl-summary dt svg{display:none}
 body.role-separation .mhl-role-section{padding:0;border:0}
 body.role-separation .mhl-roles>div{display:block}
 @media(max-width:700px){body.role-separation main .container{width:calc(100% - 36px)}}
+
+/* Keep evidence headings in view and Korean words together at line breaks. */
+body.role-separation #mhl-evidence-section{scroll-margin-top:24px}
+body.role-separation .mhl-evidence-body :is(p,dt,dd,li){min-width:0;word-break:keep-all;overflow-wrap:anywhere}

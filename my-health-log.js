@@ -1,6 +1,11 @@
 // Reveal the evidence section only when a case or direct evidence link is selected.
 const evidenceSection = document.getElementById('mhl-evidence-section');
 const evidenceButtons = document.querySelectorAll('.mhl-evidence-link');
+function scrollToEvidence(target) {
+  // Keep the section title and introduction visible for the first case.
+  const destination = target.id === 'case-input' ? evidenceSection : target;
+  destination.scrollIntoView({ behavior: 'instant', block: 'start' });
+}
 for (const button of evidenceButtons) {
   const panel = document.getElementById(button.getAttribute('aria-controls'));
   if (!panel) continue;
@@ -20,7 +25,7 @@ for (const button of evidenceButtons) {
     if (panel.open) {
       evidenceSection.hidden = false;
       summary.focus({ preventScroll: true });
-      panel.scrollIntoView({ behavior: 'instant', block: 'start' });
+      scrollToEvidence(panel);
     }
   });
 }
@@ -31,7 +36,7 @@ function revealLinkedEvidence() {
   if (panel) {
     evidenceSection.hidden = false;
     panel.open = true;
-    target.scrollIntoView({ behavior: 'instant', block: 'start' });
+    scrollToEvidence(target);
   } else if (target === evidenceSection) {
     evidenceSection.hidden = false;
     target.scrollIntoView({ behavior: 'instant', block: 'start' });
