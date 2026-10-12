@@ -1,35 +1,40 @@
-// Reveal the evidence section only when a case or direct evidence link is selected.
+// Each case reveals its own evidence directly below its overview.
 const evidenceSection = document.getElementById('mhl-evidence-section');
 const evidenceButtons = document.querySelectorAll('.mhl-evidence-link');
-function scrollToEvidence(target) {
-  const firstCase = document.getElementById('case-input');
-  if (!evidenceSection.hidden) {
-    firstCase.style.scrollMarginTop = `${firstCase.getBoundingClientRect().top - evidenceSection.getBoundingClientRect().top + 24}px`;
-  }
-  // Keep the section title and introduction visible for the first case.
-  const destination = target.id === 'case-input' ? evidenceSection : target;
-  destination.scrollIntoView({ behavior: 'instant', block: 'start' });
-}
-for (const button of evidenceButtons) {
-  const panel = document.getElementById(button.getAttribute('aria-controls'));
-  if (!panel) continue;
-  const summary = panel.querySelector('summary');
-  const originalLabel = button.getAttribute('aria-label').replace('자세히 보기', '접기');
-  const closedLabel = button.getAttribute('aria-label');
-  const syncExpanded = () => {
+const caseControls = [...evidenceButtons].map(button => ({
+  button,
+  panel: document.getElementById(button.getAttribute('aria-controls')),
+  closedLabel: button.getAttribute('aria-label'),
+})).filter(control => control.panel);
+let sectionLinked = false;
+
+function syncEvidence() {
+  for (const { button, panel, closedLabel } of caseControls) {
+    if (!panel.open && panel.contains(document.activeElement)) {
+      button.focus({ preventScroll: true });
+    }
+    panel.hidden = !panel.open;
     button.setAttribute('aria-expanded', String(panel.open));
-    button.setAttribute('aria-label', panel.open ? originalLabel : closedLabel);
+    button.setAttribute('aria-label', panel.open ? closedLabel.replace('자세히 보기', '접기') : closedLabel);
     button.innerHTML = (panel.open ? '검증 내용 접기' : '검증 내용 자세히 보기') + ' <span aria-hidden="true">→</span>';
-    evidenceSection.hidden = !document.querySelector('.mhl-evidence[open]');
-  };
-  panel.addEventListener('toggle', syncExpanded);
+  }
+  // Supplementary headings stay available independently of case toggles.
+  evidenceSection.hidden = false;
+  for (const panel of evidenceSection.querySelectorAll('.mhl-evidence')) {
+    panel.querySelector('summary').setAttribute('aria-expanded', String(panel.open));
+  }
+}
+
+for (const { button, panel } of caseControls) {
   button.addEventListener('click', () => {
     panel.open = !panel.open;
-    syncExpanded();
+    syncEvidence();
     if (panel.open) {
-      evidenceSection.hidden = false;
-      summary.focus({ preventScroll: true });
-      scrollToEvidence(panel);
+      // Keep the selected case and its button together with the newly opened text.
+      const card = button.closest('.mhl-case');
+      if (card.getBoundingClientRect().top < 24 || panel.getBoundingClientRect().top > innerHeight - 80) {
+        card.scrollIntoView({ behavior: 'instant', block: 'start' });
+      }
     }
   });
 }
@@ -37,23 +42,18 @@ for (const button of evidenceButtons) {
 function revealLinkedEvidence() {
   const target = document.getElementById(location.hash.slice(1));
   const panel = target?.closest('.mhl-evidence');
+  sectionLinked = target === evidenceSection || target?.id === 'evidence-title';
   if (panel) {
-    evidenceSection.hidden = false;
     panel.open = true;
-    scrollToEvidence(target);
-  } else if (target === evidenceSection) {
-    evidenceSection.hidden = false;
+    syncEvidence();
     target.scrollIntoView({ behavior: 'instant', block: 'start' });
+  } else {
+    syncEvidence();
+    if (sectionLinked) target.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 }
 for (const panel of document.querySelectorAll('.mhl-evidence')) {
-  panel.addEventListener('toggle', () => {
-    if (!panel.open && !document.querySelector('.mhl-evidence[open]')) {
-      evidenceSection.hidden = true;
-      const button = [...evidenceButtons].find(button => button.getAttribute('aria-controls') === panel.id) || evidenceButtons[0];
-      if (evidenceSection.contains(document.activeElement)) button?.focus({ preventScroll: true });
-    }
-  });
+  panel.addEventListener('toggle', syncEvidence);
 }
 // Preserve old home-section addresses while moving profile information to the main site.
 const oldProfileSections = { about: 'about', skills: 'about', career: 'experience', contact: 'contact' };
